@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         装备属性百分比显示
-// @namespace    https://github.com/Glow224
+// @namespace    http://tampermonkey.net/
 // @version      1.0.0
 // @description  从灰到金显示数值占装备总数值的百分比
 // @author       deepseek & Glow
