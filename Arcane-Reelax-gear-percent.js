@@ -1,18 +1,15 @@
 // ==UserScript==
 // @name         装备属性百分比显示
-// @namespace    http://tampermonkey.net/
+// @namespace    https://openuserjs.org/
 // @version      1.0.0
 // @description  从灰到金显示数值占装备总数值的百分比
-// @author       deepseek & Glow
+// @author       deepseek & [农民]农村钓鱼人
 // @match        https://reelax.abang666.com/*
 // @match        https://reelax.cn/*
 // @grant        none
 // @run-at       document-end
 // @noframes
-// @downloadURL  https://raw.githubusercontent.com/GOLDENGLOWGLOW/Arcane-Reelax-gear-percent/refs/heads/main/Arcane-Reelax-gear-percent.js
-// @updateURL    https://raw.githubusercontent.com/GOLDENGLOWGLOW/Arcane-Reelax-gear-percent/refs/heads/main/Arcane-Reelax-gear-percent.js
 // ==/UserScript==
-
 (function() {
     'use strict';
 
