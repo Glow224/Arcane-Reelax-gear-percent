@@ -1,5 +1,5 @@
 # Arcane-Reelax-gear-percent
-显示装备属性百分比的用户脚本
+在装备数值旁显示各属性占总数值的百分比，颜色从灰色到金色渐变
 
 <p><img width="361" height="130" alt="image" src="https://github.com/user-attachments/assets/4e36cfe8-47cd-4cb1-b8a5-3b71fc1c36a0" />
 
