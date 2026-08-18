@@ -10,7 +10,7 @@
 // @run-at       document-end
 // @noframes
 // @downloadURL  https://raw.githubusercontent.com/Glow224/Arcane-Reelax-gear-percent/refs/heads/main/Arcane-Reelax-gear-percent.js
-// @updateURL    https://raw.githubusercontent.com/GOLDENGLOWGLOW/Arcane-Reelax-gear-percent/refs/heads/main/Arcane-Reelax-gear-percent.js
+// @updateURL    https://raw.githubusercontent.com/Glow224/Arcane-Reelax-gear-percent/refs/heads/main/Arcane-Reelax-gear-percent.js
 // ==/UserScript==
 
 (function() {
