@@ -76,7 +76,6 @@
     function getAttrValue(container, attrName) {
         const el = findAttrValueElement(container, attrName);
         if (!el) return null;
-        // 移除千位分隔符后再匹配数字
         const cleanText = el.textContent.trim().replace(/,/g, '');
         const match = cleanText.match(/([+-]?\d+)/);
         if (match) {
@@ -211,5 +210,4 @@
     observeDOM();
 
     window.refreshEquipPercent = scanAndProcess;
-    console.log('[装备百分比] 千位符修复版已加载');
 })();
