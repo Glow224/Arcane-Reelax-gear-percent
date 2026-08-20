@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         装备属性百分比显示
 // @namespace    https://github.com/Glow224
-// @version      1.0.1
+// @version      1.0.2
 // @description  从灰到金显示数值占装备总数值的百分比
 // @author       deepseek & Glow
 // @license      MIT
