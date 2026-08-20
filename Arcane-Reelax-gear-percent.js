@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         装备属性百分比显示
 // @namespace    https://github.com/Glow224
-// @version      1.0.0
+// @version      1.0.1
 // @description  从灰到金显示数值占装备总数值的百分比
 // @author       deepseek & Glow
 // @license      MIT
@@ -40,7 +40,7 @@
                 const parent = textNode.parentElement;
                 if (!parent) continue;
                 let next = parent.nextElementSibling;
-                if (next && /[+-]?\d+/.test(next.textContent)) {
+                if (next && /[+-]?[\d,]+/.test(next.textContent)) {
                     return next;
                 }
                 const container = parent.closest('tr, .stat-row, .flex, .grid, .attribute-row, .stat-item') || parent.parentElement;
@@ -48,7 +48,7 @@
                     const allChildren = container.querySelectorAll('*');
                     for (const el of allChildren) {
                         if (el === parent) continue;
-                        if (/[+-]?\d+/.test(el.textContent) && el.textContent.trim() !== attrName) {
+                        if (/[+-]?[\d,]+/.test(el.textContent) && el.textContent.trim() !== attrName) {
                             return el;
                         }
                     }
@@ -60,13 +60,13 @@
         for (const el of valueEls) {
             const prev = el.previousElementSibling;
             if (prev && prev.textContent.trim() === attrName) {
-                if (/[+-]?\d+/.test(el.textContent)) return el;
+                if (/[+-]?[\d,]+/.test(el.textContent)) return el;
             }
             const parent = el.parentElement;
             if (parent) {
                 const attrLabel = parent.querySelector(`:scope > span, :scope > div, :scope > td`);
                 if (attrLabel && attrLabel.textContent.trim() === attrName) {
-                    if (/[+-]?\d+/.test(el.textContent)) return el;
+                    if (/[+-]?[\d,]+/.test(el.textContent)) return el;
                 }
             }
         }
@@ -76,7 +76,9 @@
     function getAttrValue(container, attrName) {
         const el = findAttrValueElement(container, attrName);
         if (!el) return null;
-        const match = el.textContent.trim().match(/([+-]?\d+)/);
+        // 移除千位分隔符后再匹配数字
+        const cleanText = el.textContent.trim().replace(/,/g, '');
+        const match = cleanText.match(/([+-]?\d+)/);
         if (match) {
             const val = parseInt(match[1], 10);
             if (!isNaN(val)) return val;
@@ -209,4 +211,5 @@
     observeDOM();
 
     window.refreshEquipPercent = scanAndProcess;
+    console.log('[装备百分比] 千位符修复版已加载');
 })();
